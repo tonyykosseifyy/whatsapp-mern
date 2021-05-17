@@ -9,7 +9,13 @@
 .sidebar-chat:hover {
   background-color: #ebebeb ;
 }
-
+.sidebar-chat-info {
+  margin-left: 15px ;
+}
+.sidebar-chat-info > h2 {
+  font-size: 16px ;
+  margin-bottom : 8px ;
+}
 .sidebar-ripple {
   position: absolute;
   top:0 ;
