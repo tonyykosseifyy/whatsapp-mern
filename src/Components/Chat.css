@@ -62,5 +62,25 @@
   align-items: center ;
   justify-content: space-between ;
   height: 62px ;
-  border-top: 1px solid lightgray ; 
+  border-top: 1px solid lightgray ;
+}
+.chat-footer > form {
+  flex: 1 ;
+  display: flex ;
+}
+
+
+.chat-footer > form > input {
+  flex: 1 ;
+  border-radius : 30px ;
+  padding: 10px ;
+  border: none ;
+  outline: none ;
+}
+.chat-footer > form > button {
+  display: none ;
+}
+.chat-footer > .MuiSvgIcon-root {
+  margin: 10px ;
+  color: gray ;
 }
