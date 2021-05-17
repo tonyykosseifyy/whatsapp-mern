@@ -1,4 +1,3 @@
 # whatsapp-mern
 
-
-MERN Stack whatsapp project 
+Whatsapp Clone with MERN Stack (MongoDB , Express, React, Node JS )
