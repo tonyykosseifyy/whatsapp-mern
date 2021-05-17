@@ -5,6 +5,8 @@ import IconButton from '@material-ui/core/IconButton' ;
 import SearchOutlinedIcon from '@material-ui/icons/SearchOutlined' ;
 import AttachFileIcon from '@material-ui/icons/AttachFile' ;
 import MoreVertIcon from '@material-ui/icons/MoreVert' ;
+import InsertEmotionIcon from '@material-ui/icons/InsertEmoticon' ;
+import MicIcon from '@material-ui/icons/Mic' ;
 
 const Chat = () => {
   return (
@@ -44,6 +46,15 @@ const Chat = () => {
           This is a message
           <span className='chat-timestamp'>{new Date().toUTCString()}</span>
         </p>
+      </div>
+
+      <div className='chat-footer'>
+        <InsertEmotionIcon />
+        <form>
+          <input placeholder='Type a message' type='text' />
+          <button type='submit'>Send a message</button>
+        </form>
+        <Mic />
       </div>
     </div>
   )
