@@ -1,0 +1,62 @@
+.sidebar-chat {
+  display: flex ;
+  padding: 20px ;
+  cursor: pointer ;
+  border-bottom: 1px solid #f6f6f6;
+  transition: .1s ease-out ;
+  position: relative;
+}
+.sidebar-chat:hover {
+  background-color: #ebebeb ;
+}
+
+.sidebar-ripple {
+  position: absolute;
+  top:0 ;
+  right: 0 ;
+  bottom: 0 ;
+  left: 0 ;
+  width: 100% ;
+  height: 100% ;
+  background-color: rgba(196,196,196,1) ;
+  border-radius: 50% ;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1 ;
+  animation-duration: .9s ;
+  transform: scale(0) ;
+  z-index: 0 ;
+  opacity:0 ;
+}
+@keyframes rippleAnimationn {
+  0% {
+    transform: scale(0) ;
+    opacity: 1 ;
+  }
+  50% {
+    transform: scale(1);
+    border-radius: 0px ;
+  }
+  65% {
+    opacity: 0 ;
+  }
+  100% {
+    opacity: 0 ;
+  }
+}
+
+@keyframes rippleAnimation {
+  0% {
+    transform: scale(0) ;
+    opacity: 1 ;
+  }
+  50% {
+    transform: scale(1);
+    border-radius: 0px ;
+  }
+  65% {
+    opacity: 0 ;
+  }
+  100% {
+    opacity: 0 ;
+  }
+}
