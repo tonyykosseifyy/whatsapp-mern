@@ -40,9 +40,20 @@ db.once('open' , () => {
   const changeStream = msgCollection.watch() ;
 
   changeStream.on('change' , (change) => {
-    console.log(change)
-  })
-})
+    console.log(change) ;
+
+    if (change.operationType === 'insert') {
+      const messageDetails = change.fullDocument ;
+      pusher.trigger("messages" , "inserted", {
+        name: messageDetails.name ,
+        message: messageDetails.message
+      }) ;
+    } else {
+      console.log('error triggering pusher') ;
+    }
+
+  }) ;
+}) ;
 
 app.get('/' , (req , res) => res.status(200).send("hello world")) ;
 
