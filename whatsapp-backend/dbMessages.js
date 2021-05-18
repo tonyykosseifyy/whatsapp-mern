@@ -10,4 +10,4 @@ const whatsappSchema = mongoose.Schema({
 
 
 
-module.exports = mongoose.model('messagecontent' , whatsappSchema ) ;
+module.exports = mongoose.model('messagecontents' , whatsappSchema ) ;
