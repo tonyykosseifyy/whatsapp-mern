@@ -55,7 +55,7 @@
 }
 .chat-receiver {
   margin-left: auto ;
-  background-color: #dcf8c6
+  background-color: #dcf8c6 !important ;
 }
 .chat-footer {
   display: flex ;
