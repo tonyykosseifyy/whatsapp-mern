@@ -2,7 +2,7 @@ const express = require('express') ;
 const mongoose = require('mongoose') ;
 const Messages = require('./dbMessages.js')
 const Pusher = require("pusher");
-
+const cors = require('cors') ;
 
 const app = express() ;
 const port = process.env.PORT || 9000 ;
@@ -22,7 +22,13 @@ pusher.trigger("my-channel", "my-event", {
 
 
 app.use(express.json()) ;
+app.use(cors()) ;
 
+app.use((req , res , next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*") ;
+  res.setHeader("Access-Control-Allow-Headers" , "*") ;
+  next() ;
+}) ;
 
 const connection_uri = 'mongodb+srv://tonyykosseifyy:t03018765@cluster0.dw8hg.mongodb.net/whatsapp-mern?retryWrites=true&w=majority' ;
 mongoose.connect(connection_uri , {
@@ -46,7 +52,8 @@ db.once('open' , () => {
       const messageDetails = change.fullDocument ;
       pusher.trigger("messages" , "inserted", {
         name: messageDetails.name ,
-        message: messageDetails.message
+        message: messageDetails.message ,
+        timestamp: messageDetails.timestamp
       }) ;
     } else {
       console.log('error triggering pusher') ;
